@@ -1,16 +1,57 @@
+
+<!--
+- About me  
+- Privacy Policy
+- Legal 
+- SF Native App
+    - Distillbert NLP Sentiment analysis Snowflake Native App
+    - App2 
+    - App3
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PZCorp</title>
+    <title>pawelzdunek.pl!</title>
+    <style>
+        #email {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to PZCorp website!</h1>
+    <h1>Welcome to pawelzdunek.pl!</h1>
     <nav>
-        <a href="privacy/">Privacy Policy</a> | 
-        <a href="about/">About Me</a>
-        <a href="distillbert/">Distillbert NLP Sentiment analysis Snowflake Native App</a>
+        <ul>
+            <li><a href="about/">About me</a></li>
+            <li><a href="privacy/">Privacy Policy</a></li>
+            <li><a href="legal/">Legal</a></li>
+            <li>SF Native Apps
+                <ul>
+                    <li><a href="apps/distillbert/">Distillbert NLP Sentiment analysis Snowflake Native App</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
+
+    <p>
+        <button id="showEmailButton">Email me</button>
+        <span id="email"></span>
+    </p>
+
+    <script>
+        document.getElementById('showEmailButton').addEventListener('click', function() {
+            const emailSpan = document.getElementById('email');
+            const user = "support";
+            const domain = "pawelzdunek.pl";
+            emailSpan.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+            emailSpan.style.display = 'inline';
+            this.style.display = 'none'; // Hide the button after clicking
+        });
+    </script>
 </body>
 </html>
+
